@@ -20,8 +20,8 @@
   export function disableTyping() {
     editingdisabled = true;
     unsub = timerVal.subscribe((val) => {
-      lastTryChars.set(textAreaVal.replaceAll(" ", "").length);
-      const wordsCount = textAreaVal.split(" ").length;
+      lastTryChars.set(textAreaVal.length);
+      const wordsCount = textAreaVal.length / 5;
       lastTryWords.set(wordsCount);
       lastTryWPM.set(wordsCount / val);
     });
